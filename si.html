@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Simple Interest Calculator</title>
+    <link rel="stylesheet" href="add.css">
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-ACpccd4r_uQlAJcgw4pYW5YBzm9jYyRKNw&s">
+</head>
+<body>
+            <h2>Simple Interest Calculator</h2>
+
+            <label >Principal Amount (P):</label><br>
+            <input type="number" id="principal" required><br>
+
+            <label >Rate of Interest (% per annum):</label><br>
+            <input type="number" id="rate" required><br>
+
+            <label >Time (years):</label><br>
+            <input type="number" id="time"  required><br>
+
+            <button type="button" onclick="calculateInterest()">CALCULATE</button>
+        
+            <div id="result">
+                <h2>Interest: <span id="simpleInterest"></span></h2>
+            </div>
+    <script>
+    
+    function calculateInterest() {
+    const principal = document.getElementById("principal").value;
+    const rate = document.getElementById("rate").value;
+    const time = document.getElementById("time").value;
+
+    if (principal && rate && time) {
+        const interest = (principal * rate * time) / 100;
+        document.getElementById("simpleInterest").textContent = interest;
+    } else {
+        alert("Please fill all fields!");
+    }
+    }
+    </script>
+</body>
+</html>
